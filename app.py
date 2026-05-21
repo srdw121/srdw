@@ -1,10 +1,8 @@
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 
-# 临时存数据
 data_list = []
 
-# 表单页面
 @app.route('/', methods=['GET','POST'])
 def index():
     if request.method == 'POST':
@@ -54,7 +52,6 @@ button{background:#009966;color:white;padding:12px 20px;border:none;width:100%;f
 </form>
 '''
 
-# 本地拉数据接口
 @app.route('/get_data')
 def get_data():
     global data_list
